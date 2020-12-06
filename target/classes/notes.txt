@@ -1,0 +1,51 @@
+1. Spring Security with Servlet Filters
+    - Servlet filters are used to pre-process or post-process the web requests.
+    - Servlet filters can route the web request based on security logic
+    - Spring provides a bulk of security functionality with servlet filters.
+
+
+2. Authentication
+    - check userid and password with credentials stored in app/db
+
+3.Authorization - check if used has authorised role.
+4. Declarative security
+    - XML
+    - JAVA configuration
+
+5. Programmatic security
+    - Spring provides an API for custom application coding
+    - Provides greater customisation for specific app requirements.
+
+6. Different login methods
+    - HTTP basic authentication
+    - Default login form
+    - Custom login form
+
+7. Authentication and authorisation
+    - in-memory
+    - jdbc
+    - ldap
+    - custom / pluggable
+    - others..
+
+
+8. Steps:
+1. SecurityWebApplicationInitializer class
+2. @EnableWebSecurity // enable spring security
+   public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
+
+3. Add users, password, roles.
+	@Override
+   	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+   		// add our users for in memory authentication
+   		@Deprecated
+   		UserBuilder users = User.withDefaultPasswordEncoder(); // default use plain text
+
+   		auth.inMemoryAuthentication()
+   			.withUser(users.username("john").password("test123").roles("EMPLOYEE"))
+   			.withUser(users.username("mary").password("test123").roles("MANAGER"))
+   			.withUser(users.username("susan").password("test123").roles("ADMIN"));
+   			// can give any role admin., etc.
+   	}
+

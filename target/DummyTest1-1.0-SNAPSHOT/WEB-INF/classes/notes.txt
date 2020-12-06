@@ -1,0 +1,30 @@
+1. Spring Security with Servlet Filters
+    - Servlet filters are used to pre-process or post-process the web requests.
+    - Servlet filters can route the web request based on security logic
+    - Spring provides a bulk of security functionality with servlet filters.
+
+
+2. Authentication
+    - check userid and password with credentials stored in app/db
+
+3.Authorization - check if used has authorised role.
+4. Declarative security
+    - XML
+    - JAVA configuration
+
+5. Programmatic security
+    - Spring provides an API for custom application coding
+    - Provides greater customisation for specific app requirements.
+
+6. Different login methods
+    - HTTP basic authentication
+    - Default login form
+    - Custom login form
+
+7. Authentication and authorisation
+    - in-memory
+    - jdbc
+    - ldap
+    - custom / pluggable
+    - others..
+
